@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inscription en Ligne</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Inscription en Ligne</h1>
+
+    <div id="inscriptionSection">
+        <h2>Soumettre votre dossier d'inscription</h2>
+        <form id="inscriptionForm">
+            <div><label for="nom">Nom:</label><input type="text" id="nom" name="nom" required></div>
+            <div><label for="prenom">Prénom:</label><input type="text" id="prenom" name="prenom" required></div>
+            <div><label for="email">Email:</label><input type="email" id="email" name="email" required></div>
+            <div><label for="contact">Contact:</label><input type="text" id="contact" name="contact"></div>
+            <div><label for="photo">Photo:</label><input type="file" id="photo" name="photo" accept="image/*"></div>
+            <div><label for="releves">Relevés de notes:</label><input type="file" id="releves" name="releves" accept=".pdf"></div>
+            <button type="submit">Soumettre le dossier</button>
+        </form>
+        <div id="resultatSoumission" class="message"></div>
+    </div>
+
+    <div id="statutSection">
+        <h2>Vérifier le statut du dossier</h2>
+        <form id="statutForm">
+            <div><label for="idEtudiantStatut">Identifiant Étudiant:</label><input type="text" id="idEtudiantStatut" name="idEtudiantStatut" required></div>
+            <button type="button" onclick="consulterStatut()">Vérifier le statut</button>
+        </form>
+        <div id="resultatStatut" class="message"></div>
+    </div>
+
+    <div id="convocationSection" style="display: none;">
+        <h2>Télécharger la convocation</h2>
+        <button type="button" id="telechargerConvocationBtn">Télécharger la convocation</button>
+        <div id="resultatConvocation" class="message"></div>
+    </div>
+
+    <div id="testSection" style="display: none;">
+        <h2>Test d'admission</h2>
+        <div id="questionsContainer"></div>
+        <button type="button" id="soumettreTestBtn">Soumettre les réponses</button>
+        <div id="resultatTest" class="message"></div>
+    </div>
+
+    <div id="resultatFinalSection" style="display: none;">
+        <h2>Résultat du test</h2>
+        <div id="finalResultat" class="message"></div>
+    </div>
+
+    <div id="paiementSection" style="display: none;">
+        <h2>Effectuer le paiement</h2>
+        <form id="paiementForm">
+            <div><label for="montantPaiement">Montant:</label><input type="number" id="montantPaiement" name="montantPaiement" value="[Montant]" readonly></div>
+            <div><label for="modePaiement">Mode de paiement:</label>
+                <select id="modePaiement" name="modePaiement">
+                    <option value="mobile_money">Mobile Money</option>
+                    <option value="carte_bancaire">Carte Bancaire</option>
+                </select>
+            </div>
+            <button type="button" onclick="effectuerPaiement()">Payer</button>
+        </form>
+        <div id="resultatPaiement" class="message"></div>
+    </div>
+
+    <div id="attestationSection" style="display: none;">
+        <h2>Télécharger l'attestation d'inscription</h2>
+        <button type="button" id="telechargerAttestationBtn">Télécharger l'attestation</button>
+        <div id="resultatAttestation" class="message"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
