@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         const formData = new FormData(inscriptionForm);
 
-        fetch('/api/inscriptions/', {
+        fetch('/api/inscriptions/index.php', {
             method: 'POST',
             body: formData,
         })
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 modePaiement: modePaiement
             };
 
-            fetch('/api/paiements/', {
+            fetch('/api/paiement/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
